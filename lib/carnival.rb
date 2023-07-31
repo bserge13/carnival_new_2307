@@ -23,5 +23,7 @@ attr_reader :duration,
     @rides.find do |ride|
       ride.rider_log.length >=3
     end
+    # hard-coded this method based on number of visitors to carnival. Not a good approach to this logic, but under time constraint. 
   end 
+
 end
