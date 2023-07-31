@@ -1,19 +1,18 @@
 class Visitor
   attr_reader :name,
               :height,
-              :dollar_ammount,
+              :spending_money,
               :preferences
 
-  def initialize(name, height, dollar_ammount)
+  def initialize(name, height, spending_money)
     @name = name
     @height = height 
-    @dollar_ammount = dollar_ammount
+    @spending_money = spending_money.delete!("$").to_i
     @preferences = []
   end
 
-  def spending_money
-    @dollar_ammount.delete! "$"
-    @dollar_ammount.to_i
+  def spend_money(amount)
+    @spending_money -= amount  
   end
 
   def add_preference(ride_preference)
