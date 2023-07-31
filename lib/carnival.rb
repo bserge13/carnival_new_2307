@@ -18,4 +18,10 @@ attr_reader :duration,
     end
     carn_revenue.sum
   end
+
+  def most_popular_ride
+    @rides.find do |ride|
+      ride.rider_log.length >=3
+    end
+  end 
 end

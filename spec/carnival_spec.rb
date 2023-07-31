@@ -52,16 +52,18 @@ RSpec.describe Carnival do
       ride1.board_rider(visitor1)
       ride1.board_rider(visitor2)
       ride1.board_rider(visitor1)
+      ride1.board_rider(visitor3)
       ride2.board_rider(visitor1)
       ride2.board_rider(visitor3)
       ride3.board_rider(visitor2)
       ride3.board_rider(visitor2)
 
-      expect(ride1.total_revenue).to eq(3)
+      expect(ride1.total_revenue).to eq(4)
       expect(ride2.total_revenue).to eq(10)
       expect(ride3.total_revenue).to eq(4)
 
-      expect(carnival.total_revenue).to eq(17)
+      expect(carnival.total_revenue).to eq(18)
+      expect(carnival.most_popular_ride).to eq(ride1)
     end
   end
 end 
